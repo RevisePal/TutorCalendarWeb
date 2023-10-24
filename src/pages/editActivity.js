@@ -20,6 +20,7 @@ const EditActivity = () => {
     educationType: "",
     engagementTime: 0,
     popular: false,
+    recommended: false,
     thingsNeeded: [],
     timeToSetup: 0,
     type: "",

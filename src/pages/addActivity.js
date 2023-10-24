@@ -7,7 +7,7 @@ import AppBar from "@mui/material/AppBar";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Checkbox from "@mui/material/Checkbox";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const AddActivity = () => {
   const [newActivity, setNewActivity] = useState({
@@ -16,6 +16,7 @@ const AddActivity = () => {
     educationType: "",
     engagementTime: 0,
     popular: false,
+    recommended: false,
     thingsNeeded: [],
     timeToSetup: 0,
     type: "",
@@ -34,9 +35,10 @@ const AddActivity = () => {
   };
 
   const handleCheckboxChange = (e) => {
+    const { name, checked } = e.target;
     setNewActivity({
       ...newActivity,
-      popular: e.target.checked,
+      [name]: checked,
     });
   };
 
@@ -65,7 +67,6 @@ const AddActivity = () => {
       console.error("Error adding document: ", e);
     }
   };
-  
 
   return (
     <div>
@@ -168,6 +169,14 @@ const AddActivity = () => {
             <Checkbox
               name="popular"
               checked={newActivity.popular}
+              onChange={handleCheckboxChange}
+            />
+          </label>
+          <label>
+            Recommended:
+            <Checkbox
+              name="recommended"
+              checked={newActivity.recommended}
               onChange={handleCheckboxChange}
             />
           </label>
