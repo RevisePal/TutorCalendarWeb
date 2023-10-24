@@ -7,11 +7,22 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import { useNavigate } from "react-router-dom";
 import { db, getDocs, collection } from "../firebase";
+import Snackbar from "@mui/material/Snackbar";
+import Alert from "@mui/material/Alert";
 
 const Dashboard = () => {
   const [activities, setActivities] = useState([]);
   const [value, setValue] = React.useState(0);
   const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const message = localStorage.getItem("activityAdded");
+    if (message) {
+      setOpen(true);
+      localStorage.removeItem("activityAdded");
+    }
+  }, []);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -57,6 +68,16 @@ const Dashboard = () => {
           />
         </Tabs>
       </AppBar>
+
+      <Snackbar
+        open={open}
+        autoHideDuration={6000}
+        onClose={() => setOpen(false)}
+      >
+        <Alert onClose={() => setOpen(false)} severity="success">
+          Activity added successfully
+        </Alert>
+      </Snackbar>
 
       {value === 0 && (
         <div
