@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
+import Button from "@mui/material/Button";
 import AppBar from "@mui/material/AppBar";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import { db, getDocs, collection } from "../firebase";
 
 const Dashboard = () => {
@@ -18,6 +19,10 @@ const Dashboard = () => {
 
   const handleCardClick = (id) => {
     navigate(`/editActivity/${id}`);
+  };
+
+  const handleAddActivity = () => {
+    navigate("/addActivity");
   };
 
   useEffect(() => {
@@ -58,12 +63,30 @@ const Dashboard = () => {
           style={{ display: "flex", flexDirection: "column", margin: "20px" }}
         >
           <h2>Activities</h2>
-          <div style={{ display: "flex", flexWrap: "wrap", flexDirection: 'column' }}>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={handleAddActivity}
+            style={{ width: "200px" }}
+          >
+            Add New Activity
+          </Button>
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              flexDirection: "column",
+            }}
+          >
             {activities.map((activity) => (
               <Card
                 key={activity.id}
                 onClick={() => handleCardClick(activity.id)}
-                style={{ margin: "10px", cursor: "pointer" }}
+                style={{
+                  marginBottom: "10px",
+                  marginTop: "10px",
+                  cursor: "pointer",
+                }}
               >
                 <CardContent>{activity.title}</CardContent>
               </Card>
