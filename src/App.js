@@ -8,6 +8,7 @@ import Dashboard from "./pages/dashboard";
 import AddActivity from "./pages/addActivity";
 import EditActivity from "./pages/editActivity";
 import PrivacyPolicy from "./pages/privacy";
+import DeleteAccount from "./pages/delete";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/addActivity" element={<AddActivity />} />
         <Route path="/editActivity/:id" element={<EditActivity />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/delete" element={<DeleteAccount />} />
       </Routes>
     </Router>
   );
