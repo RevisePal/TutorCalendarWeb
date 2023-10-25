@@ -9,17 +9,19 @@ import AddActivity from "./pages/addActivity";
 import EditActivity from "./pages/editActivity";
 import PrivacyPolicy from "./pages/privacy";
 import DeleteAccount from "./pages/delete";
+import LandingPage from "./pages/landingPage";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Navigate to="/dashboard" />} />
+        <Route path="/" element={<Navigate to="/landingPage" />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/addActivity" element={<AddActivity />} />
         <Route path="/editActivity/:id" element={<EditActivity />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/delete" element={<DeleteAccount />} />
+        <Route path="/landingPage" element={<LandingPage />} />
       </Routes>
     </Router>
   );
