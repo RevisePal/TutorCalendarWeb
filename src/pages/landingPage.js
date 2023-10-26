@@ -70,12 +70,31 @@ function LandingPage() {
         </h2>
         <div className="btn-container">
           <button
-            className="btn btn-primary"
+            style={{
+              padding: "20px",
+              borderRadius: "8px",
+              backgroundColor: "#fff",
+              border: "black 2px solid",
+              color: "black",
+              fontWeight: "400px",
+              width: "200px",
+            }}
             onClick={() => (window.location.href = "https://play.google.com/")}
           >
             Get it on Google Play
           </button>
-          <Link className="btn btn-secondary" to="/dashboard">
+          <Link
+            style={{
+              padding: "20px",
+              borderRadius: "8px",
+              backgroundColor: "#000",
+              border: "black 2px solid",
+              fontWeight: "400px",
+              width: "200px",
+            }}
+            className="btn btn-secondary"
+            to="/dashboard"
+          >
             Create Activities
           </Link>
         </div>
@@ -112,9 +131,6 @@ function LandingPage() {
                 </li>
               ))}
             </ul>
-            <Link className="section-btn" to="/signUp">
-              Join
-            </Link>
           </div>
         </div>
 
@@ -149,9 +165,6 @@ function LandingPage() {
                 </li>
               ))}
             </ul>
-            <Link className="section-btn" to="/signUp">
-              Join
-            </Link>
           </div>
         </div>
 
@@ -185,9 +198,6 @@ function LandingPage() {
                 </li>
               ))}
             </ul>
-            <Link className="section-btn" to="/signUp">
-              Join
-            </Link>
           </div>
         </div>
       </div>
