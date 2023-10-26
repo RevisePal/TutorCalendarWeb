@@ -3,6 +3,7 @@ import React, {
   // useEffect
 } from "react";
 import { Link } from "react-router-dom";
+import "../App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 // import { auth } from "../src/firebase";
@@ -13,19 +14,18 @@ function LandingPage() {
 
   const items = [
     {
-      name: "Transcription",
+      name: "Indoor Activities",
       content:
-        "Automatic transcription of every therapy session, ensuring no detail is missed.",
+        "A curated list of indoor activities to keep your kids entertained.",
     },
     {
-      name: "Summaries",
+      name: "Outdoor Fun",
       content:
-        "AI-generated session summaries to quickly capture key points and observations.",
+        "Safely explore the outdoors with a variety of kid-friendly activities.",
     },
     {
-      name: "Efficiency",
-      content:
-        "Dramatically reduce the workload of therapists by streamlining documentation.",
+      name: "Educational",
+      content: "Activities that are fun and also stimulate your child's mind.",
     },
   ];
 
@@ -33,71 +33,52 @@ function LandingPage() {
     {
       name: "Time-saving",
       content:
-        "No more manual note-taking. Let the tool handle the documentation so therapists can focus on their clients.",
+        "Quickly find activities that suit your schedule and your child's age.",
     },
     {
-      name: "Precision",
-      content:
-        "Ensure every detail is captured with high accuracy using state-of-the-art AI transcription.",
+      name: "Safe",
+      content: "All activities are vetted for safety and age appropriateness.",
     },
     {
-      name: "Continual Learning",
-      content:
-        "The tool adapts and refines insights over time for consistently improved results.",
+      name: "Variety",
+      content: "Never run out of ideas with constantly updated activities.",
     },
   ];
 
   const items3 = [
     {
-      name: "Data Security",
-      content:
-        "Upholding the highest standards of data protection and confidentiality.",
+      name: "User Reviews",
+      content: "Read reviews from other parents to make informed decisions.",
     },
     {
-      name: "Integration",
+      name: "Save Favorites",
       content:
-        "Seamlessly integrate with existing telehealth platforms and tools.",
+        "Keep track of activities your kids love for easy future access.",
     },
     {
-      name: "Intuitive Display",
-      content:
-        "Easy-to-read transcripts and summaries displayed in a user-friendly manner.",
+      name: "Easy Sharing",
+      content: "Share activities with other parents at the tap of a button.",
     },
   ];
 
-  // useEffect(() => {
-  //   onAuthStateChanged(auth, (user) => {
-  //     if (user && !user.isAnonymous) {
-  //       setLoggedIn(true);
-  //       sessionStorage.setItem("uid", user.uid);
-  //       console.log("User is logged in:", user.uid);
-  //     } else {
-  //       setLoggedIn(false);
-  //       sessionStorage.removeItem("uid");
-  //       console.log("User is logged out or anonymous");
-  //     }
-  //   });
-  // const timer = setTimeout(() => {a
-  //   setShowPriorityModal(true);
-  // }, 100000);
-  // return () => clearTimeout(timer);
-  // }, []);
-
-  // const handlePrioritySelect = async (priority) => {
-  //   console.log("Selected priority:", priority);
-  // };
-
   return (
     <div>
-      <div>
-        <div className="login-btn-container"></div>
-      </div>
       <div className="container1">
-        <h1 className="title">The Therapy Assistant</h1>
+        <h1 className="title">Kiddl - Activities for Kids</h1>
         <h2 className="subtitle">
-          AI-powered transcriptions and session summaries for therapists.
+          Your go-to app for fun and educational activities for children.
         </h2>
-        <div className="btn-container"></div>
+        <div className="btn-container">
+          <button
+            className="btn btn-primary"
+            onClick={() => (window.location.href = "https://play.google.com/")}
+          >
+            Get it on Google Play
+          </button>
+          <Link className="btn btn-secondary" to="/dashboard">
+            Create Activities
+          </Link>
+        </div>
       </div>
       <div className="container1b"></div>
       <div className="container2">
