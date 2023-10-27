@@ -10,6 +10,8 @@ import EditActivity from "./pages/editActivity";
 import PrivacyPolicy from "./pages/privacy";
 import DeleteAccount from "./pages/delete";
 import LandingPage from "./pages/landingPage";
+import Support from "./pages/support";
+
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/delete" element={<DeleteAccount />} />
         <Route path="/landingPage" element={<LandingPage />} />
+        <Route path="/support" element={<Support />} />
       </Routes>
     </Router>
   );
