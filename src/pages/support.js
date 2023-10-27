@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Button, Box, Link } from '@mui/material';
+import { Container, Typography, Box, Link } from '@mui/material';
 
 const Support = () => {
   return (
